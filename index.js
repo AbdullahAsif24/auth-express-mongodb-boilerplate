@@ -1,8 +1,9 @@
+// url where i deployed this app on vercel --> https://auth-express-mongodb-boilerplate-ctdl023tf.vercel.app/
+
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db/config.js";
 import authRoutes from "./routes/authRoutes.js";
-import cors from 'cors'
 
 const app = express();
 
@@ -10,7 +11,6 @@ dotenv.config();
 connectDB();
 
 app.use(express.json());
-app.use(cors("*"))
 
 app.use("/auth", authRoutes);
 
