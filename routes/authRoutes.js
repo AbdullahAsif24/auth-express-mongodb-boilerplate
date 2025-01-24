@@ -6,9 +6,6 @@ import bcrypt from "bcryptjs";
 const router = express.Router();
 
 router.post("/signup", async(req, res)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all origins
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
     try {
         let {username, email, password} = req.body;
@@ -37,10 +34,6 @@ router.post("/signup", async(req, res)=>{
 })
 
 router.post("/login", async (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow all origins
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ email });
