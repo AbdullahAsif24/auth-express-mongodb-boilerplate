@@ -12,7 +12,7 @@ dotenv.config();
 connectDB();
 
 app.use(express.json());
-app.use(cors("http://localhost:3000"))
+app.use(cors("http://localhost:3000/auth"))
 
 app.use("/auth", authRoutes);
 
